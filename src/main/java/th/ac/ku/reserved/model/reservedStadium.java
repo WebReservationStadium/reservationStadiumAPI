@@ -15,9 +15,9 @@ public class reservedStadium {
     private int id;
 
     private int userId;
-    private Date day;
-    private Time start;
-    private Time end;
+    private String day;
+    private String start;
+    private String end;
     private boolean status;
 
     public int getId() {
@@ -36,19 +36,19 @@ public class reservedStadium {
         this.userId = userId;
     }
 
-    public Time getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Time start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Time getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(Time end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 
@@ -60,11 +60,11 @@ public class reservedStadium {
         this.status = status;
     }
 
-    public Date getDay() {
+    public String getDay() {
         return day;
     }
 
-    public void setDay(Date day) {
+    public void setDay(String day) {
         this.day = day;
     }
 

@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/reservedstadium")
-public class reservedStadiumController {
+public class   reservedStadiumController {
     private reservedRepository repository;
 
     public reservedStadiumController(reservedRepository repository) {
