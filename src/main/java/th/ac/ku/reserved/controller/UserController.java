@@ -30,5 +30,10 @@ public class UserController {
             return null;
         }
     }
+    @GetMapping("/username/{userId}")
+    public String getUsernames(@PathVariable int userId){
+        User record = userrepository.findById(userId).get();
+        return record.getUsername();
+    }
 
 }
