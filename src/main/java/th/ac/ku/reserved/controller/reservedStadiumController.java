@@ -3,6 +3,7 @@ package th.ac.ku.reserved.controller;
 
 import org.springframework.web.bind.annotation.*;
 import th.ac.ku.reserved.data.reservedRepository;
+import th.ac.ku.reserved.model.User;
 import th.ac.ku.reserved.model.reservedStadium;
 
 import java.util.List;
@@ -44,7 +45,7 @@ public class reservedStadiumController {
         record.setDay(reservedstadium.getDay());
         record.setStart(reservedstadium.getStart());
         record.setEnd(reservedstadium.getEnd());
-        record.setStatus(reservedstadium.isStatus());
+        record.setStatus(true);
         repository.save(record);
         return record;
     }
@@ -54,4 +55,5 @@ public class reservedStadiumController {
         repository.deleteById(id);
         return record;
     }
+
 }
