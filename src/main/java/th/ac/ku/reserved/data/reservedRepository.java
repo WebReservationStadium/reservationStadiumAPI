@@ -6,5 +6,5 @@ import th.ac.ku.reserved.model.reservedStadium;
 import java.util.List;
 
 public interface reservedRepository  extends JpaRepository<reservedStadium,Integer> {
-    List<reservedStadium> findByUserId(int userId);
+
 }

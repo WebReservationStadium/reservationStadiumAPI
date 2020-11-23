@@ -4,21 +4,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Date;
-import java.sql.Time;
 
 @Entity
 public class reservedStadium {
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int userId;
+    private int stadium;
+    private String name;
     private String day;
     private String start;
     private String end;
     private boolean status;
+
+    public int getStadium() {
+        return stadium;
+    }
+
+    public void setStadium(int stadium) {
+        this.stadium = stadium;
+    }
 
     public int getId() {
         return id;
@@ -28,12 +37,12 @@ public class reservedStadium {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStart() {
@@ -67,16 +76,18 @@ public class reservedStadium {
     public void setDay(String day) {
         this.day = day;
     }
-
     @Override
     public String toString() {
         return "reservedStadium{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", day=" + day +
-                ", start=" + start +
-                ", end=" + end +
+                ", stadium=" + stadium +
+                ", name='" + name + '\'' +
+                ", day='" + day + '\'' +
+                ", start='" + start + '\'' +
+                ", end='" + end + '\'' +
                 ", status=" + status +
                 '}';
     }
+
+
 }

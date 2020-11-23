@@ -3,7 +3,6 @@ package th.ac.ku.reserved.controller;
 
 import org.springframework.web.bind.annotation.*;
 import th.ac.ku.reserved.data.reservedRepository;
-import th.ac.ku.reserved.model.User;
 import th.ac.ku.reserved.model.reservedStadium;
 
 import java.util.List;
@@ -17,10 +16,8 @@ public class   reservedStadiumController {
     public reservedStadiumController(reservedRepository repository) {
         this.repository = repository;
     }
-    @GetMapping("/user/{userId}")
-    public List<reservedStadium> getUserReserved(@PathVariable int userId){
-        return repository.findByUserId(userId);
-    }
+
+
     @GetMapping
     public List<reservedStadium> getAll(){
         return repository.findAll();
@@ -41,7 +38,7 @@ public class   reservedStadiumController {
     @PutMapping("/{id}")
     public reservedStadium update(@PathVariable int id ,@RequestBody reservedStadium reservedstadium){
         reservedStadium record = repository.findById(id).get();
-        record.setUserId(reservedstadium.getUserId());
+        record.setName(reservedstadium.getName());
         record.setDay(reservedstadium.getDay());
         record.setStart(reservedstadium.getStart());
         record.setEnd(reservedstadium.getEnd());
